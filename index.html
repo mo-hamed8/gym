@@ -1,0 +1,433 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Fitness Equipment — Static (Tailwind)</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Small tweak so play CDN includes aspect-square on older setups */
+    .aspect-square {
+      aspect-ratio: 1 / 1;
+    }
+  </style>
+</head>
+
+<body class="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-emerald-50 antialiased">
+  <!-- Navbar -->
+  <nav class="bg-white/60 backdrop-blur sticky top-0 z-30">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="flex items-center justify-between h-16">
+        <div class="flex items-center gap-4">
+          <div class="flex items-center gap-2">
+            <img id="logo" src="C:\Users\mo_ha\Downloads\su1.png" alt="Fitness logo" class="w-12 h-12 rounded-lg " />
+            <span class="font-semibold text-slate-800">SUPER POWER SPORT</span>
+          </div>
+        </div>
+
+        <div class="hidden md:flex items-center gap-6">
+          <a id="navHome" href="#" class="text-slate-700 hover:text-slate-900">Home</a>
+          <a id="navAbout" href="#" class="text-slate-700 hover:text-slate-900">About</a>
+          <a id="navServices" href="#" class="text-slate-700 hover:text-slate-900">Services</a>
+          <a id="navContact" href="#" class="text-slate-700 hover:text-slate-900">Contact</a>
+        </div>
+
+        <div class="flex items-center gap-3">
+          <button id="langBtn"
+            class="hidden md:inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-red-600 to-gray-800 text-white rounded-xl shadow-lg">عربي</button>
+          <button id="mobileMenuBtn" class="md:hidden p-2 rounded-lg bg-white shadow-sm">
+            <svg class="w-5 h-5 text-slate-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
+        </div>
+      </div>
+      <!-- Mobile menu -->
+      <div id="mobileMenu" class="hidden md:hidden py-2">
+        <a id="navHomeMobile" href="#" class="block px-2 py-2 rounded hover:bg-slate-100">Home</a>
+        <a id="navAboutMobile" href="#" class="block px-2 py-2 rounded hover:bg-slate-100">About</a>
+        <a id="navServicesMobile" href="#" class="block px-2 py-2 rounded hover:bg-slate-100">Services</a>
+        <a id="navContactMobile" href="#" class="block px-2 py-2 rounded hover:bg-slate-100">Contact</a>
+
+      </div>
+    </div>
+  </nav>
+
+  <div id="app" class="max-w-4xl mx-auto">
+    <div class="flex justify-end p-4 md:hidden">
+      <button id="langBtnSmall"
+        class="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-red-600 to-gray-800 text-white rounded-xl shadow-lg">عربي</button>
+    </div>
+
+    <!-- Header -->
+    <div class="relative">
+      <div id="heroImgWrap" class="w-full aspect-square overflow-hidden rounded-b-3xl">
+        <img id="heroImg"
+          src="https://image.made-in-china.com/202f0j00sHvYSuMPLBcK/Commercial-Gym-Equipment-Life-Fitness-Machine-Chest-Press.webp"
+          alt="Leg Press Machine" class="w-full h-full object-cover" />
+      </div>
+      <div class="px-6 md:px-8 pt-6 pb-4">
+        <div class="flex items-center gap-2 mb-3">
+          <svg class="w-6 h-6 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
+          </svg>
+          <span id="guideLabel" class="text-sm uppercase tracking-wider text-slate-600">Equipment Guide</span>
+        </div>
+        <h1 id="title" class="text-slate-900 mb-3 text-2xl font-semibold">chest press</h1>
+        <p id="description" class="text-slate-600 max-w-2xl">This exercise involves using a lever machine to perform a
+          chest press movement. The user sits on the machine and pushes the handles forward, engaging the chest muscles.
+          The lever machine provides resistance throughout the movement.</p>
+      </div>
+    </div>
+
+    <div class="px-4 md:px-8 py-8 space-y-6">
+      <!-- Muscles -->
+      <div class="bg-white rounded-2xl shadow-lg p-6 md:p-8">
+        <div class="flex items-center gap-3 mb-4">
+          <div
+            class="w-10 h-10 rounded-full bg-gradient-to-br from-red-600 to-gray-800 flex items-center justify-center">
+            <svg class="w-5 h-5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <path d="M12 2v20" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </div>
+          <h2 id="musclesTitle" class="text-slate-800">Muscles Targeted</h2>
+        </div>
+        <div id="muscles" class="flex flex-wrap gap-3 mb-6">
+          <span
+            class="px-4 py-2 bg-gradient-to-r from-blue-100 to-emerald-100 text-slate-700 rounded-full border border-blue-200/50">Quadriceps</span>
+          <span
+            class="px-4 py-2 bg-gradient-to-r from-blue-100 to-emerald-100 text-slate-700 rounded-full border border-blue-200/50">Glutes</span>
+          <span
+            class="px-4 py-2 bg-gradient-to-r from-blue-100 to-emerald-100 text-slate-700 rounded-full border border-blue-200/50">Hamstrings</span>
+          <span
+            class="px-4 py-2 bg-gradient-to-r from-blue-100 to-emerald-100 text-slate-700 rounded-full border border-blue-200/50">Calves</span>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
+          <div class="rounded-xl overflow-hidden border-2 border-blue-200/50 aspect-square">
+            <img
+              src="https://i0.wp.com/www.strengthlog.com/wp-content/uploads/2021/11/Bench-press-muscles-worked.jpg?resize=700%2C700&ssl=1"
+              alt="Leg Muscles Anatomy" class="w-full h-full object-cover" />
+          </div>
+          
+        </div>
+      </div>
+
+      <!-- How to Use -->
+      <div class="bg-white rounded-2xl shadow-lg p-6 md:p-8">
+        <h2 id="howToTitle" class="text-slate-800 mb-6">How to Use the Machine</h2>
+
+        <!-- Image Section -->
+        <div class="mb-6 w-full flex justify-center">
+          <img src="https://liftmanual.com/wp-content/uploads/2023/04/lever-chest-press.webp" alt="Machine Image"
+            class="max-w-full rounded-xl shadow-md" id="machineImage" />
+        </div>
+
+        <div class="space-y-4" id="instructions">
+          <div class="flex gap-4">
+            <div
+              class="flex-shrink-0 w-8 h-8 rounded-full bg-gradient-to-br from-red-600 to-gray-800 flex items-center justify-center text-white">
+              1</div>
+            <p class="text-slate-700 pt-1">Sit on the machine with your back and head resting against the padded support
+            </p>
+          </div>
+          <div class="flex gap-4">
+            <div
+              class="flex-shrink-0 w-8 h-8 rounded-full bg-gradient-to-br from-red-600 to-gray-800 flex items-center justify-center text-white">
+              2</div>
+            <p class="text-slate-700 pt-1">Place your feet on the platform about hip-width apart</p>
+          </div>
+          <div class="flex gap-4">
+            <div
+              class="flex-shrink-0 w-8 h-8 rounded-full bg-gradient-to-br from-red-600 to-gray-800 flex items-center justify-center text-white">
+              3</div>
+            <p class="text-slate-700 pt-1">Release the safety bars and slowly lower the platform by bending your knees
+            </p>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- Common Mistakes -->
+      <div class="bg-white rounded-2xl shadow-lg p-6 md:p-8">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="w-10 h-10 rounded-full bg-amber-100 flex items-center justify-center">
+            <svg class="w-5 h-5 text-amber-600" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <path d="M12 2v20" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </div>
+          <h2 id="mistakesTitle" class="text-slate-800">Common Mistakes to Avoid</h2>
+        </div>
+        <div id="mistakesContainer" class="space-y-3">
+          <div class="flex gap-3 items-start p-3 rounded-lg bg-amber-50 border border-amber-200/50">
+            <div class="text-amber-600">!</div>
+            <p class="text-slate-700">Locking knees at full extension - this puts unnecessary stress on the joints</p>
+          </div>
+          <div class="flex gap-3 items-start p-3 rounded-lg bg-amber-50 border border-amber-200/50">
+            <div class="text-amber-600">!</div>
+            <p class="text-slate-700">Placing feet too high or too low on the platform - affects muscle engagement</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Reps -->
+      <div class="bg-white rounded-2xl shadow-lg p-6 md:p-8">
+        <h2 id="repsTitle" class="text-slate-800 mb-6"></h2>
+
+        <div id="repsContainer" class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        </div>
+      </div>
+
+      <!-- Video -->
+      <div class="bg-white rounded-2xl shadow-lg p-6 md:p-8">
+        <h2 class="text-slate-800 mb-4">Tutorial Video</h2>
+        <div class="aspect-video rounded-xl overflow-hidden bg-slate-100">
+          <iframe src="https://www.youtube.com/embed/IZxyjW7MPJQ" title="Exercise Tutorial" class="w-full h-full"
+            allowfullscreen></iframe>
+        </div>
+      </div>
+
+      <!-- Start button -->
+      <div>
+        <button id="startBtn"
+          class="w-full py-4 px-8 bg-gradient-to-r from-red-600  to-gray-800 text-white rounded-2xl shadow-lg">Start
+          Workout</button>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="mt-12 border-t bg-white/40 backdrop-blur">
+      <div class="max-w-6xl mx-auto px-4 py-10 grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div>
+          <div class="flex items-center gap-3 mb-4">
+            <img id="logoFooter" src="C:\Users\mo_ha\Downloads\su1.png" alt="Fitness logo"
+              class="w-20 h-20 rounded-lg " />
+            <div>
+              <div class="font-semibold text-slate-800">SUPER POWER SPORT</div>
+              <div class="text-sm text-slate-500">Build strength. Stay fit.</div>
+            </div>
+          </div>
+          <div class="flex gap-3 mt-4">
+            <a href="#" class="text-slate-500 hover:text-slate-700" aria-label="Twitter">
+              <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M8 19c7.732 0 11.955-6.397 11.955-11.94v-.544A8.54 8.54 0 0022 4.58a8.27 8.27 0 01-2.357.646A4.117 4.117 0 0021.447 3.2a8.224 8.224 0 01-2.605.996A4.107 4.107 0 0015.447 3c-2.266 0-4.103 1.828-4.103 4.086 0 .32.036.634.106.935A11.65 11.65 0 013 4.897a4.073 4.073 0 00-.555 2.056c0 1.42.728 2.675 1.837 3.408a4.09 4.09 0 01-1.858-.512v.05c0 1.984 1.406 3.637 3.27 4.012a4.12 4.12 0 01-1.852.07c.522 1.613 2.037 2.788 3.833 2.824A8.24 8.24 0 012 17.66 11.616 11.616 0 008 19" />
+              </svg>
+            </a>
+            <a href="#" class="text-slate-500 hover:text-slate-700" aria-label="Instagram">
+              <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M7 2h10a5 5 0 015 5v10a5 5 0 01-5 5H7a5 5 0 01-5-5V7a5 5 0 015-5zm5 6.25a4 4 0 100 8 4 4 0 000-8zM18.5 6a.5.5 0 11-1 0 .5.5 0 011 0z" />
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="md:col-span-2 grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div>
+            <h4 class="text-sm font-semibold mb-2">Quick Links</h4>
+            <ul class="text-sm text-slate-600 space-y-1">
+              <li><a href="#" class="hover:text-slate-800">Home</a></li>
+              <li><a href="#" class="hover:text-slate-800">About</a></li>
+              <li><a href="#" class="hover:text-slate-800">Services</a></li>
+              <li><a href="#" class="hover:text-slate-800">Contact</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="text-sm font-semibold mb-2">Resources</h4>
+            <ul class="text-sm text-slate-600 space-y-1">
+              <li><a href="#" class="hover:text-slate-800">Blog</a></li>
+              <li><a href="#" class="hover:text-slate-800">Guides</a></li>
+              <li><a href="#" class="hover:text-slate-800">Support</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="text-sm font-semibold mb-2">Company</h4>
+            <ul class="text-sm text-slate-600 space-y-1">
+              <li><a href="#" class="hover:text-slate-800">About Us</a></li>
+              <li><a href="#" class="hover:text-slate-800">Careers</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="text-sm font-semibold mb-2">Legal</h4>
+            <ul class="text-sm text-slate-600 space-y-1">
+              <li><a href="#" class="hover:text-slate-800">Privacy</a></li>
+              <li><a href="#" class="hover:text-slate-800">Terms</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="border-t">
+        <div
+          class="max-w-6xl mx-auto px-4 py-4 text-sm text-slate-500 flex flex-col md:flex-row items-center justify-between">
+          <div>© 2025 SUPER POWER SPORT. All rights reserved.</div>
+          <div class="mt-3 md:mt-0">Made with ❤</div>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+<script>
+  const data = {
+    en: {
+      name: "Chest press Machine",
+      description: "This exercise involves using a lever machine...",
+      guideLabel: "Equipment Guide",
+      musclesTitle: "Muscles Targeted",
+      muscles: ["Pectorals", "Front Deltoids", "Triceps"],
+      howToTitle: "How to Use the Machine",
+      instructions: [
+        "Adjust the seat height so that the handles are at chest level.",
+        "Sit on the machine with your back flat against the pad.",
+        "Grasp the handles and push forward.",
+        "Slowly return while keeping elbows slightly bent.",
+        "Repeat for desired reps."
+      ],
+      mistakesTitle: "Common Mistakes to Avoid",
+      mistakes: [
+        "Locking knees at full extension - unnecessary stress on joints.",
+        "Feet too high/low on the platform - reduces engagement."
+      ],
+      repsTitle: "Recommended Reps & Sets",
+      reps: {
+        beginner: "3 sets × 10–12 reps",
+        intermediate: "4 sets × 12–15 reps",
+        advanced: "4–5 sets × 15–20 reps"
+      },
+    },
+    ar: {
+      name: "جهاز الضغط الصدري",
+      description: "هذا التمرين يعتمد على استخدام جهاز الرافعة...",
+      guideLabel: "دليل الأجهزة",
+      musclesTitle: "العضلات المستهدفة",
+      muscles: ["عضلة الصدر", "الدلتويد الأمامي", "عضلة الترايسبس"],
+      howToTitle: "كيفية استخدام الجهاز",
+      instructions: [
+        "اضبط ارتفاع المقعد بحيث تكون المقابض في مستوى الصدر.",
+        "اجلس على الجهاز مع إبقاء ظهرك مستقيمًا.",
+        "ادفع المقابض للأمام حتى تُمد ذراعيك.",
+        "أعد المقابض ببطء مع ثني خفيف في المرفق.",
+        "كرر حسب عدد التكرارات المطلوب."
+      ],
+      mistakesTitle: "الأخطاء الشائعة التي يجب تجنبها",
+      mistakes: [
+        "فرد الذراعين بقوة كاملة — يضغط على المفاصل.",
+        "تقريب أو إبعاد المرفقين بشكل مبالغ — يزيد إجهاد الكتف.",
+        "استخدام وزن ثقيل جدًا — يقلل جودة الحركة."
+      ],
+      repsTitle: "عدد المجموعات والتكرارات الموصى بها",
+      reps: {
+        beginner: "٣ مجموعات × ١٠–١٢ تكرار",
+        intermediate: "٤ مجموعات × ١٢–١٥ تكرار",
+        advanced: "٤–٥ مجموعات × ١٥–٢٠ تكرار"
+      },
+    }
+  };
+
+  let current = 'en';
+
+  // عناصر DOM
+  const langBtn = document.getElementById('langBtn');
+  const langBtnSmall = document.getElementById('langBtnSmall');
+  const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+
+  const title = document.getElementById('title');
+  const description = document.getElementById('description');
+  const guideLabel = document.getElementById('guideLabel');
+  const musclesTitle = document.getElementById('musclesTitle');
+  const howToTitle = document.getElementById('howToTitle');
+  const instructionsWrap = document.getElementById('instructions');
+  const mistakesTitle = document.getElementById('mistakesTitle');
+  const mistakesContainer = document.getElementById("mistakesContainer");
+  const repsTitle = document.getElementById("repsTitle");
+  const repsContainer = document.getElementById("repsContainer");
+  const musclesWrap = document.getElementById('muscles');
+
+  function renderLocale(loc) {
+    const doc = data[loc];
+
+    title.innerText = doc.name;
+    description.innerText = doc.description;
+    guideLabel.innerText = doc.guideLabel;
+    musclesTitle.innerText = doc.musclesTitle;
+    howToTitle.innerText = doc.howToTitle;
+    mistakesTitle.innerText = doc.mistakesTitle;
+    repsTitle.innerText = doc.repsTitle;
+
+    // Reps
+    repsContainer.innerHTML = `
+      <div class="p-5 rounded-xl bg-gradient-to-br from-green-50 to-emerald-50 border border-green-200/50">
+        <h3 class="text-green-900">${loc === 'ar' ? 'المبتدئ' : 'Beginner'}</h3>
+        <p class="text-green-700 text-lg">${doc.reps.beginner}</p>
+      </div>
+      <div class="p-5 rounded-xl bg-gradient-to-br from-blue-50 to-cyan-50 border border-blue-200/50">
+        <h3 class="text-blue-900">${loc === 'ar' ? 'المتوسط' : 'Intermediate'}</h3>
+        <p class="text-blue-700 text-lg">${doc.reps.intermediate}</p>
+      </div>
+      <div class="p-5 rounded-xl bg-gradient-to-br from-purple-50 to-indigo-50 border border-purple-200/50">
+        <h3 class="text-purple-900">${loc === 'ar' ? 'المتقدم' : 'Advanced'}</h3>
+        <p class="text-purple-700 text-lg">${doc.reps.advanced}</p>
+      </div>
+    `;
+
+    // Muscles
+    musclesWrap.innerHTML = "";
+    doc.muscles.forEach(muscle => {
+      const m = document.createElement("span");
+      m.className = "px-4 py-2 bg-gradient-to-r from-blue-100 to-emerald-100 text-slate-700 rounded-full border border-blue-200/50";
+      m.textContent = muscle;
+      musclesWrap.appendChild(m);
+    });
+
+    // Instructions
+    instructionsWrap.innerHTML = '';
+    doc.instructions.forEach((ins, i) => {
+      const el = document.createElement('div');
+      el.className = 'flex gap-4';
+      el.innerHTML = `<div class="flex-shrink-0 w-8 h-8 rounded-full bg-gradient-to-br from-red-600 to-gray-800 flex items-center justify-center text-white">${i + 1}</div>
+                      <p class="text-slate-700 pt-1">${ins}</p>`;
+      instructionsWrap.appendChild(el);
+    });
+
+    // Mistakes
+    mistakesContainer.innerHTML = "";
+    doc.mistakes.forEach(m => {
+      const box = document.createElement("div");
+      box.className = "flex gap-3 items-start p-3 rounded-lg bg-amber-50 border border-amber-200/50";
+      box.innerHTML = `<div class="text-amber-600 font-bold text-xl">!</div>
+                       <p class="text-slate-700">${m}</p>`;
+      mistakesContainer.appendChild(box);
+    });
+
+    // RTL / LTR
+    document.documentElement.dir = loc === 'ar' ? 'rtl' : 'ltr';
+    langBtn.innerText = loc === 'ar' ? 'English' : 'عربي';
+    langBtnSmall.innerText = loc === 'ar' ? 'English' : 'عربي';
+  }
+
+  // Event listeners
+  function toggleLanguage() {
+    current = current === 'en' ? 'ar' : 'en';
+    renderLocale(current);
+  }
+
+  langBtn.addEventListener('click', toggleLanguage);
+  langBtnSmall.addEventListener('click', toggleLanguage);
+
+  // Mobile menu toggle
+  mobileMenuBtn.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+  });
+
+  // Initial render
+  renderLocale(current);
+</script>
+
+
+</body>
+
+</html>
